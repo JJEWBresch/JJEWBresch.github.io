@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
+
+<html lang="en">
+<head>
+  <title>Jonas Bresch</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <style>
+    .page-layout{
+      display:grid;
+      width:100%;
+      max-width:1240px;
+      grid-template-columns:minmax(0, 1fr) minmax(220px, 250px);
+      gap:24px;
+      align-items:start;
+      padding-bottom:32px;
+    }
+    .main-content{
+      grid-column:1;
+      min-width:0;
+      width:auto !important;
+      float:none !important;
+      padding:0 !important;
+    }
+    .main-content::after,
+    .image123::after{ content:""; display:table; clear:both; }
+    .info-sidebar{ grid-column:2; grid-row:1; min-width:0; }
+    .profile-card{ min-width:0; }
+    .profile-name{ font-family:'Oswald', sans-serif; font-size:32px; line-height:1.2; margin-bottom:18px; }
+    .profile-card p{ margin:0 0 10px; }
+    .social-links{ margin-top:18px; }
+    .social-links dd{ margin-bottom:4px; }
+    .social-links a{ color:darkgreen; }
+    @media (max-width:767px){
+      .page-layout{ grid-template-columns:minmax(0, 1fr); gap:24px; }
+      .main-content{ grid-column:1; grid-row:auto; order:1; }
+      .info-sidebar{ grid-column:1; grid-row:auto; order:2; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <!--<a href="/index.html"><img style='height: 100%; width: 100%; object-fit: contain' src="tu-ernst-reuter-small.png" alt="tu-ernst-reuter" /></a>-->
+    <a href="/index.html"><img style='height: 100%; width: 100%; object-fit: contain' src="LMU_header.png" alt="lmu-bogen" /></a>
+</header>
+
+
+<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+				  <!-- <li><a href="https://www.user.tu-berlin.de/jonasbresch/">Home</a></li> -->
+          <li><a href="index.html">Home</a></li>
+				  <li><a href="publications.html">Publications</a></li> 
+          <li><a href="events.html">Events</a></li> 
+          <li><a href="map.html">Map</a></li> 
+          <li><a href="teaching.html">Teaching</a></li> 
+				  <li><a href="cv_academic.pdf">CV</a></li> 
+          <li><a href="images.html">Impression</a></li> 
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+  
+  <!-- Page Content -->
+    <div class="container">
+
+            <!-- Teaching , style="height: 100vh;-->
+            <div class="col-12 col-md-9 offset-md-3">      
+              <h2 id="publications">Publications</h2>
+
+              <strong>Dissertation</strong><br/>
+              <ul>
+                <li> <a href="https://doi.org/10.14279/depositonce-25863", style="color:darkgreen">Geometry-Aware Ansätze in Image Processing and Stochastic Calculations of Matrix Quantities</a>,<br> 
+                  J. Bresch,<br>
+                  <i>Dissertation, submitted December 2025, devended April 2026, accepted May 2026, open access May 2026,</i><br>
+                  <i>supervised by G. Steidl, reviewed by G. Steidl, M. Stoll, E. Chouzenoux, chaired by J. M. Sullivan</i>.</li>
+              </ul>
+
+              <strong>Articles</strong><br/>
+              <ul>
+                <li> <a href="https://doi.org/10.1007/s10851-026-01327-4", style="color:darkgreen">Generalizations of the Normalized Radon Cumulative Distribution Transform for Limited Data Recognition</a>,<br> 
+                  M. Beckmann, R. Beinert, J. Bresch<br>
+                  <i> J. Math. Imaging Vis., vol. 68, no. 45, accepted June 2026, open access July 2026, published September 2026</i>.</li>
+                <li> <a href="https://doi.org/10.1137/25M1772277", style="color:darkgreen">Matrix-Free Stochastic Calculation of Operator Norms Without Using Adjoints</a>,<br> 
+                  J. Bresch, D. A. Lorenz, F. Schneppe, M. Winkler<br>
+                  <i> SIAM J. Matrix Anal. Appl., vol. 47 (3) 1349--1374, accepted March 2026, open access July 2026, published September 2026</i>.</li>
+                <li> <a href="https://doi.org/10.1016/j.cam.2026.117853", style="color:darkgreen">Computing Adjoint Mismatch of Linear Maps</a>,<br> 
+                  J. Bresch, D. A. Lorenz, F. Schneppe, M. Winkler<br>
+                  <i>J. Comput. Appl. Math., vol. 488, 117853, accepted March 2026, open access June 2026, published December 2026</i>.</li>
+                <li> <a href="https://doi.org/10.1137/25M1767741", style="color:darkgreen">Normalized Radon Cumulative Distribution Transforms for Invariance and Robustness in Optimal Transport Based Image Classification</a>,<br> 
+                  M. Beckmann, R. Beinert, J. Bresch,<br>
+                  <i>SIAM J. Imaging Sci., vol. 19 (2) 677--709, accepted February 2026, open access April 2026</i>.</li>
+                <li> <a href="https://doi.org/10.4171/OWR/2025/56", style="color:darkgreen">Denoising Manifold-Valued Data by Relaxed Regularizations</a>,<br> 
+                  J. Bresch,<br>
+                  <i>Oberwolfach Rep., vol. 22 (4), accepted December 2025, open access March 2026</i>.</li>
+                <li> <a href="https://doi.org/10.1002/pamm.70069", style="color:darkgreen">Denoising Multi-Color QR Codes and Stiefel-Valued Data by Relaxed Regularizations</a>,<br> 
+                  R. Beinert, J. Bresch,<br>
+                  <i>Proc. Appl. Math. Mech., vol. 26 (1), accepted December 2025, open access January 2026</i>.</li>
+                <li> <a href="https://link.springer.com/article/10.1007/s00025-025-02579-z", style="color:darkgreen">Interpolating between Optimal Transport and KL regularized Optimal Transport using Rényi Divergences</a>,<br> 
+                  J. Bresch, V. Stein<br>
+                  <i>Results Math., vol. 81 (23), accepted November 2025, published December 2025</i>.</li>
+                <li> <a href="https://link.springer.com/chapter/10.1007/978-3-031-92366-1_19", style="color:darkgreen">Max-Normalized Radon Cumulative Distribution Transform for Limited Data Classification</a>,<br> 
+                  M. Beckmann, R. Beinert, J. Bresch,<br>
+                  <i>SSVM, Lect. Notes Comput. Sci. 2025, vol. 15667, revised November 2024, open access May 2025</i>.</li>
+                <li> <a href="https://link.springer.com/chapter/10.1007/978-3-031-92366-1_2", style="color:darkgreen">Denoising Hyperbolic-Valued Data by Relaxed Regularizations</a>,<br> 
+                  R. Beinert, J. Bresch,<br>
+                  <i>SSVM, Lect. Notes Comput. Sci. 2025, vol. 15667, revised November 2024, open access May 2025</i>.</li>
+                <li> <a href="https://doi.org/10.1002/pamm.202400016", style="color:darkgreen">Denoising sphere-valued data by relaxed total variation regularization</a>,<br> 
+                  R. Beinert, J. Bresch,<br>
+                  <i>Proc. Appl. Math. Mech., vol. 24 (4), revised September 2024, open access October 2024</i>.</li>
+                <li> <a href="https://www.aimsciences.org/article/doi/10.3934/ipi.2024026", style="color:darkgreen">Denoising of Sphere- and SO(3)-Valued Data by Relaxed Tikhonov Regularization</a>,<br> 
+                R. Beinert, J. Bresch, G. Steidl,<br>
+                <i>Inverse Probl. Imag., vol. 19 (1), revised May 2024, early access June 2024, published February 2025</i>.</li>
+              </ul>
+
+              <strong>Pre-print</strong><br/>
+              <ul>
+                <li> <a href="https://arxiv.org/abs/2604.26913", style="color:darkgreen">Generalization of Zeroth-Order Method for Quotients of Quadratic Functions</a>,<br> 
+                  J. Bresch,<br>
+                  <i>submitted to J. Optim. Theory Appl. 29th April, 2026</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2603.13503", style="color:darkgreen">A Discrete Radon Transform Based on the Area of Cube-Plane Intersection</a>,<br> 
+                  R. Beinert, J. Bresch, M. Quellmalz,<br>
+                  <i>submitted to IEEE Trans. Image Process. 13th March, 2026</i>.</li>
+                  <li> <a href="https://arxiv.org/abs/2512.05520", style="color:darkgreen">Stochastic Zeroth-Order Method for Computing  Generalized Rayleigh Quotients</a>,<br> 
+                  J. Bresch, O. Melnyk, M. Schoen, G. Steidl,<br>
+                  <i>submitted to Linear Algebra Appl. 1st November, 2025</i>.</li>
+                  <li> <a href="https://arxiv.org/abs/2512.08099", style="color:darkgreen">Generalizations of the Normalized Radon Cumulative Distribution Transform for Limited Data Recognition</a>,<br> 
+                  M. Beckmann, R. Beinert, J. Bresch,<br>
+                  <i>submitted to J. Math. Imaging Vis. 30th September, 2025</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2507.13094", style="color:darkgreen">Unsupervised Ground Metrik Learning</a>,<br> 
+                  J. Auffenberg, J. Bresch, O. Melnyk, G. Steidl,<br>
+                  <i>submitted to Constr. Approx. 16th July, 2025</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2506.22826", style="color:darkgreen">Denoising Multi-Color QR Codes and Stiefel-Valued Data by Relaxed Regularizations</a>,<br> 
+                  R. Beinert, J. Bresch,<br>
+                  <i>submitted to Proc. Appl. Math. Mech. 28th June, 2025, published</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2506.08761", style="color:darkgreen">Normalized Radon Cumulative Distribution Transforms for Invariance and Robustness in Optimal Transport Based Image Classification</a>,<br> 
+                  M. Beckmann, R. Beinert, J. Bresch,<br>
+                  <i>submitted to SIAM J. Imaging Sci. 10th June, 2025, accepted</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2503.21361", style="color:darkgreen">Computing adjoint mismatch of linear maps</a>,<br> 
+                  J. Bresch, D. A. Lorenz, F. Schneppe, M. Winkler<br>
+                  <i>submitted to J. Comput. Appl. Math. 27th March, 2025</i>.</li>
+                <li> <a href="http://arxiv.org/abs/2411.16282", style="color:darkgreen">Max-Normalized Radon Cumulative Distribution Transform for Limited Data Classification</a>,<br> 
+                  M. Beckmann, R. Beinert, J. Bresch,<br>
+                  <i>submitted to SSVM, Lect. Notes Comput. Sci. 2025 25th November, 2024, published</i>.</li>
+                <li> <a href="http://arxiv.org/abs/2410.16149", style="color:darkgreen">Denoising Hyperbolic-Valued Data by Relaxed Regularizations</a>,<br> 
+                  R. Beinert, J. Bresch,<br>
+                  <i>submitted to SSVM, Lect. Notes Comput. Sci. 2025 21th October, 2024, published</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2410.08297", style="color:darkgreen">Matrix-free stochastic calculation of operator norms without using adjoints</a>,<br> 
+                  J. Bresch, D. A. Lorenz, F. Schneppe, M. Winkler<br>
+                  <i>submitted to SIAM J. Matrix Anal. Appl. 10th October, 2024, accepted</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2404.18834", style="color:darkgreen">Interpolating between Optimal Transport and KL regularized Optimal Transport using Rényi Divergences</a>,<br> 
+                  J. Bresch, V. Stein<br>
+                  <i>submitted to Results Math. 29th April, 2024, published</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2404.13181", style="color:darkgreen">Denoising of Sphere-Valued Data by Relaxed Total Variation Regularization</a>,<br> 
+                  R. Beinert, J. Bresch,<br>
+                  <i>submitted to Proc. Appl. Math. Mech. 19th April, 2024, published</i>.</li>
+                <li> <a href="https://arxiv.org/abs/2307.10980", style="color:darkgreen">Denoising of Sphere- and SO(3)-Valued Data by Relaxed Tikhonov Regularization</a>,<br> 
+                  R. Beinert, J. Bresch, G. Steidl,<br>
+                <i>submitted to Inverse Probl. Imag. 20th July, 2023, published</i>.</li>
+              </ul>
+            </div>
+
+            <!-- Contact Info on the Sidebar -->
+            <div class="col-12 col-md-3 offset-md-3">
+                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Dr. Jonas Bresch</b></div><br>
+                <p><b>bresch (at) math.lmu.de</b></a><br>
+                <p><b>+49(0)30 31419003776</b></a><br>
+                <p>Institute of Mathematics<br>
+                Chair for Mathematical Foundations of Artificial Intelligence<br>
+                Ludwig-Maximilians-Universität München<br>
+                Akademiestraße 7<br>
+                512<br>
+                Munich, Germany<br><br>
+                </p>
+           
+              <!--<dd><a href="#">Google Scholar</a></dd>  -->
+              <dd><!----  TWITTER ICON  --->
+                <svg xmlns="https://www.w3.org/2000/svg" width="12" 
+                    height="12" fill="currentColor" class="bi bi-twitter"
+                    viewBox="0 0 16 16">
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                    </svg>
+                    <a href="https://twitter.com/j_j_e_w_b", style="color:darkgreen">Twitter</a></dd>
+              <dd><svg xmlns="http://www.w3.org/2000/svg" width="12" 
+                    height="12" fill="currentColor" class="bi bi-google"
+                    viewBox="0 0 24 24">
+                    <path d="M3.8423 0a1.0037 1.0037 0 0 0 -0.922 0.6078c-0.1536 0.3687 -0.0438 0.6275 0.2938 1.1113l6.9185 8.3597 -1.0223 1.1058a1.0393 1.0393 0 0 0 0.003 1.4229l1.2292 1.3135 -5.4391 6.4444c-0.2803 0.299 -0.4538 0.823 -0.2971 1.1986a1.0253 1.0253 0 0 0 0.9585 0.635 0.9133 0.9133 0 0 0 0.6891 -0.3405l5.783 -6.126 7.4902 8.0051a0.8527 0.8527 0 0 0 0.6835 0.2597 0.9575 0.9575 0 0 0 0.8777 -0.6138c0.1577 -0.377 -0.017 -0.7502 -0.306 -1.1407l-7.0518 -8.3418 1.0632 -1.13a0.9626 0.9626 0 0 0 0.0089 -1.3165L4.6336 0.4639s-0.3733 -0.4535 -0.768 -0.463zm0 0.272h0.0166c0.2179 0.0052 0.4874 0.2715 0.5644 0.3639l0.005 0.006 0.0052 0.0055 10.169 10.9905a0.6915 0.6915 0 0 1 -0.0072 0.945l-1.0666 1.133 -1.4982 -1.7724 -8.5994 -10.39c-0.3286 -0.472 -0.352 -0.6183 -0.2592 -0.841a0.7307 0.7307 0 0 1 0.6704 -0.4401Zm14.341 1.5701a0.877 0.877 0 0 0 -0.6554 0.2418l-5.6962 6.1584 1.6944 1.8319 5.3089 -6.5138c0.3251 -0.4335 0.479 -0.6603 0.3247 -1.0292a1.1205 1.1205 0 0 0 -0.9763 -0.689zm-7.6557 12.2823 1.3186 1.4135 -5.7864 6.1295a0.6494 0.6494 0 0 1 -0.4959 0.26 0.7516 0.7516 0 0 1 -0.706 -0.4669c-0.1119 -0.2682 0.0359 -0.6864 0.2442 -0.9083l0.0051 -0.0055 0.0047 -0.0055z" fill="#000000" stroke-width="1"></path>
+                    </svg>
+                    <a href="https://arxiv.org/search/?searchtype=author&query=Bresch%2C+J", style="color:darkgreen">arXiv</a></dd>
+              <dd><svg xmlns="http://www.w3.org/2000/svg" width="12" 
+                    height="12" fill="currentColor" class="bi bi-google"
+                    viewBox="0 0 20 20">
+                    <path d='M18.88 1.099C18.147.366 17.265 0 16.233 0H3.746C2.714 0 1.832.366 1.099 1.099.366 1.832 0 2.714 0 3.746v12.487c0 1.032.366 1.914 1.099 2.647.733.733 1.615 1.099 2.647 1.099H6.66c.19 0 .333-.007.429-.02a.504.504 0 0 0 .286-.169c.095-.1.143-.245.143-.435l-.007-.885c-.004-.564-.006-1.01-.006-1.34l-.3.052c-.19.035-.43.05-.721.046a5.555 5.555 0 0 1-.904-.091 2.026 2.026 0 0 1-.872-.39 1.651 1.651 0 0 1-.572-.8l-.13-.3a3.25 3.25 0 0 0-.41-.663c-.186-.243-.375-.407-.566-.494l-.09-.065a.956.956 0 0 1-.17-.156.723.723 0 0 1-.117-.182c-.026-.061-.004-.111.065-.15.07-.04.195-.059.378-.059l.26.04c.173.034.388.138.643.311a2.1 2.1 0 0 1 .631.677c.2.355.44.626.722.813.282.186.566.28.852.28.286 0 .533-.022.742-.065a2.59 2.59 0 0 0 .585-.196c.078-.58.29-1.028.637-1.34a8.907 8.907 0 0 1-1.333-.234 5.314 5.314 0 0 1-1.223-.507 3.5 3.5 0 0 1-1.047-.872c-.277-.347-.505-.802-.683-1.365-.177-.564-.266-1.215-.266-1.952 0-1.049.342-1.942 1.027-2.68-.32-.788-.29-1.673.091-2.652.252-.079.625-.02 1.119.175.494.195.856.362 1.086.5.23.14.414.257.553.352a9.233 9.233 0 0 1 2.497-.338c.859 0 1.691.113 2.498.338l.494-.312a6.997 6.997 0 0 1 1.197-.572c.46-.174.81-.221 1.054-.143.39.98.424 1.864.103 2.653.685.737 1.028 1.63 1.028 2.68 0 .737-.089 1.39-.267 1.957-.177.568-.407 1.023-.689 1.366-.282.343-.633.63-1.053.865-.42.234-.828.403-1.223.507a8.9 8.9 0 0 1-1.333.235c.45.39.676 1.005.676 1.846v3.11c0 .147.021.266.065.357a.36.36 0 0 0 .208.189c.096.034.18.056.254.064.074.01.18.013.318.013h2.914c1.032 0 1.914-.366 2.647-1.099.732-.732 1.099-1.615 1.099-2.647V3.746c0-1.032-.367-1.914-1.1-2.647z' />
+                    </svg>
+                    <a href="https://github.com/JJEWBresch", style="color:darkgreen">GitHub</a></dd>
+              <dd><!----  GOOGLE ICON  --->
+                <svg xmlns="https://www.w3.org/2000/svg" width="12" 
+                    height="12" fill="currentColor" class="bi bi-google"
+                    viewBox="0 0 16 16">
+                    <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003 a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                    </svg> 
+                    <a href="https://scholar.google.com/citations?user=GdgyWoAAAAAJ&hl=de", style="color:darkgreen">Google Scholar</a></dd>
+              <dd><svg xmlns="http://www.w3.org/2000/svg" width="12" 
+                    height="12" fill="currentColor" class="bi bi-google"
+                    viewBox="0 0 32 32">
+                    <path d="M16 0c-8.839 0-16 7.161-16 16s7.161 16 16 16c8.839 0 16-7.161 16-16s-7.161-16-16-16zM9.823 5.839c0.704 0 1.265 0.573 1.265 1.26 0 0.688-0.561 1.265-1.265 1.265-0.692-0.004-1.26-0.567-1.26-1.265 0-0.697 0.563-1.26 1.26-1.26zM8.864 9.885h1.923v13.391h-1.923zM13.615 9.885h5.197c4.948 0 7.125 3.541 7.125 6.703 0 3.439-2.687 6.699-7.099 6.699h-5.224zM15.536 11.625v9.927h3.063c4.365 0 5.365-3.312 5.365-4.964 0-2.687-1.713-4.963-5.464-4.963z"/></svg>
+                    <a href="https://orcid.org/0009-0009-3855-0933", style="color:darkgreen">ORCID</a></dd>
+            </div>   
+
+            
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+    
+    <!-- Other people may like it too! -->
+    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+    
+</body>
+
+</html>

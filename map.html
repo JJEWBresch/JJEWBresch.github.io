@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jonas Bresch — Conferences Map</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap + jQuery (from your original header) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+
+  <!-- Modern font for the map UI 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">-->
+
+  <!-- Leaflet + MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+  <style>
+    :root{
+  --muted:#666;
+  --accent:darkgreen;
+  --upcoming:darkgreen;
+  --passed:#999;
+  --card-radius:6px;
+  font-family:'Oswald', sans-serif;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  background:#fff;
+  color:#222;
+}
+    .wrap{ max-width:1100px; margin:28px auto; padding:18px; }
+    h1{ margin:0 0 8px; font-size:20px }
+    .page-layout{
+      display:grid;
+      width:100%;
+      max-width:1140px;
+      grid-template-columns:minmax(140px, 300px) minmax(220px, 1fr) minmax(200px, 255px);
+      grid-template-areas:
+        "events map profile"
+        "events map social";
+      column-gap:24px;
+      row-gap:14px;
+      align-items:start;
+      padding-bottom:32px;
+    }
+    .panel{
+  background:#fff;
+  border:0px solid #ddd;
+  border-radius:0px;
+  padding:0px;
+  box-shadow:none;
+}
+    .events-panel{
+      grid-area:events;
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+      height:clamp(420px, 65vh, 680px);
+    }
+    .map-card{
+      grid-area:map;
+      position:relative;
+      width:100%;
+      min-width:0;
+      height:clamp(420px, 65vh, 680px);
+      border-radius:0;
+      overflow:hidden;
+    }
+    .profile-card{ grid-area:profile; min-width:0; }
+    .social-links{ grid-area:social; min-width:0; }
+    #map{ width:100%; height:100%; }
+    .small{ color:var(--muted); font-size:13px }
+    .enable-scroll{ position:absolute; right:14px; top:14px; z-index:1000; padding:8px 10px; border-radius:10px; background:rgba(0,0,0,0.03); border:1px solid rgba(0,0,0,0.04); cursor:pointer }
+    .error-banner{ position:absolute; left:12px; right:12px; top:14px; z-index:2000; padding:10px 12px; background:rgba(0,0,0,0.09); border:1px solid rgba(0,0,0,0.18); color:#ffdfe0; border-radius:10px; display:none; }
+    .controls-row{ display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:8px; margin-bottom:12px; }
+    .controls-row input{ width:100%; min-width:0; }
+    input,select{
+    border:1px solid #ccc;
+    background:#fff;
+    color:#333;
+    border-radius:4px;
+    padding:6px 10px;
+}
+
+button{
+    background:#f8f8f8;
+    border:1px solid #ccc;
+    border-radius:4px;
+    padding:6px 12px;
+}
+
+button:hover{
+    background:#eee;
+}
+    .events-list{ flex:1; min-height:0; overflow:auto; padding-right:6px; }
+    .event-row{
+    border-bottom:1px solid #eee;
+}
+
+.event-row:hover{
+    background:#f7f7f7;
+}
+    .status-pill{ display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; margin-left:6px; }
+    @media (max-width:991px){
+      .page-layout{
+        grid-template-columns:minmax(230px, .75fr) minmax(0, 1.25fr);
+        grid-template-areas:
+          "events map"
+          "profile profile"
+          "social social";
+      }
+    }
+    @media (max-width:767px){
+      .page-layout{
+        grid-template-columns:minmax(0, 1fr);
+        grid-template-areas:
+          "map"
+          "events"
+          "profile"
+          "social";
+        row-gap:24px;
+      }
+      .map-card{ height:clamp(340px, 60vh, 520px); }
+      .events-panel{ height:auto; }
+      .events-list{ max-height:50vh; }
+    }
+    .marker-pin{ width:16px; height:16px; display:block; transform:translate(-8px,-8px); border-radius:50%; box-shadow:0 6px 18px rgba(2,6,23,0.6); border:2px solid rgba(255,255,255,0.06); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!--<a href="/index.html"><img style='height: 100%; width: 100%; object-fit: contain' src="tu-ernst-reuter-small.png" alt="tu-ernst-reuter" /></a>-->
+    <a href="/index.html"><img style='height: 100%; width: 100%; object-fit: contain' src="LMU_header.png" alt="lmu-bogen" /></a>
+  </header>
+
+  <!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+		</div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+				  <!-- <li><a href="https://www.user.tu-berlin.de/jonasbresch/">Home</a></li> -->
+          <li><a href="index.html">Home</a></li>
+				  <li><a href="publications.html">Publications</a></li> 
+          <li><a href="events.html">Events</a></li> 
+          <li><a href="map.html">Map</a></li> 
+          <li><a href="teaching.html">Teaching</a></li> 
+				  <li><a href="cv_academic.pdf">CV</a></li> 
+          <li><a href="images.html">Impression</a></li> 
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+
+  <!-- Page Content -->
+  <main class="container page-layout">
+      <aside class="panel events-panel">
+        <div class="controls-row">
+          <input id="search" placeholder="Search title or description..." />
+          <select id="yearFilter"><option value="all">All years</option></select>
+        </div>
+
+        <div class="events-list panel-inner" id="eventsList" aria-live="polite"></div>
+
+        <div style="margin-top:10px; display:flex; gap:8px;">
+          <button id="fitBtn" style="flex:1">Fit markers</button>
+          <button id="resetView">Reset view</button>
+        </div>
+      </aside>
+
+      <div class="panel map-card">
+        <div id="tileError" class="error-banner"></div>
+        <div id="map"></div>
+        <button id="enableScroll" class="enable-scroll">Enable scroll</button>
+      </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // ---------- OpenStreetMap tiles (no API key required) ----------
+    const map = L.map('map', { center:[20,0], zoom:2, scrollWheelZoom:false });
+    const tileLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom:19,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    let tileErrorCount = 0;
+    const tileErrorBanner = document.getElementById('tileError');
+
+    function showTileError(msg){
+      tileErrorBanner.style.display = 'block';
+      tileErrorBanner.innerHTML = msg + ' &nbsp; <button id="retryTiles">Retry</button>';
+      document.getElementById('retryTiles').addEventListener('click', ()=>{
+        tileErrorBanner.style.display = 'none';
+        tileErrorCount = 0;
+        tileLayer.redraw();
+      });
+    }
+
+    tileLayer.on('tileerror', (err)=>{
+      tileErrorCount++;
+      console.warn('OpenStreetMap tile error', err);
+      if(tileErrorCount >= 3){
+        showTileError('OpenStreetMap tiles could not be loaded. Check your internet connection or content blocker.');
+      }
+    });
+    tileLayer.on('tileload', ()=> { tileErrorCount = 0; tileErrorBanner.style.display='none'; });
+    map.whenReady(()=>{ setTimeout(()=>map.invalidateSize(), 300); });
+    window.addEventListener('resize', ()=> setTimeout(()=>map.invalidateSize(), 200));
+    if('ResizeObserver' in window){
+      new ResizeObserver(()=> map.invalidateSize({ pan:false })).observe(document.getElementById('map'));
+    }
+
+    // ---------- Event data (from your uploaded copy of the TU-Berlin page) ----------
+    // status: "upcoming" or "passed"
+    const events=[
+      { id:101,title:'MML 2025 — Unsupervised Ground Metric Learning',lat:53.55,lon:10.00,date:'22 September, 2025',status:'passed',location:'Hamburg-Harburg, Hamburg, Germany',note:'MML 2025, University of Hamburg' },
+      { id:102,title:'MFO 2025 — Denoising Manifold-Valued Data by Relaxed Regularizations',lat:48.34,lon:8.23,date:'7 December, 2025',status:'passed',location:'Oberwolfach, Germany',note:'Mini-workshop on Approximation of Manifold-Valued Functions' },
+      { id:103,title:'ILAS 2025 — Matrix-free stochastic calculation of operator norms without using adjoints',lat:22.633333,lon:120.266667,date:'23 June, 2025',status:'passed',location:'Kaohsiung, Taiwan',note:'ILAS 2025, NSYSU' },
+      { id:104,title:'SSVM 2025 — Normalized Radon Commulative Distribution Transform',lat:50.454368,lon:-3.689622,date:'18 May, 2025',status:'passed',location:'Dartington Hall - Totnes, Devon, South England',note:'SSVM 2025, Dartington Hall' },
+      { id:105,title:'GAMM 2025 — Denoising Hyperbolic-Valued Data by Relaxed Regularizations',lat:52.406376,lon:16.925167,date:'7 April, 2025',status:'passed',location:'Poznań, Poland',note:'GAMM 2025, Poznan University of Technology' },
+      { id:106,title:'Oberseminar 2024 - Denoising Techniques for Manifold-valued Data',lat:53.073635,lon:8.806422,date:'2 December, 2024',status:'passed',location:'Bremen, Germany',note:'Oberseminar: Optimization, TU Bremen' },
+      { id:201,title:'DWCAA 2024 — Interpolating between OT and KL-regularized OT unsing Rényi Divergences',lat:46.47667,lon:11.77055,date:'10 September, 2024',status:'passed',location:'Alba di Canazei, Italy',note:'University of Padova' },
+      { id:202,title:'UQIPI 2024 — Denoising of Sphere-Valued Data by Relaxed Total Variation Regularization',lat:55.953251,lon:-3.188267,date:'16 September, 2024',status:'passed',location:'Edinburgh, UK',note:'ICMS Bayes Centre, Edinburgh' },
+      { id:203,title:'LOL 2024 — Interpolating between OT and KL-regularized OT unsing Rényi Divergences',lat:43.23083,lon:5.441111,date:'17 June, 2024',status:'passed',location:'Marseille, France',note:'CIRM Luminy' },
+      { id:204,title:'GAMM 2024 — Denoising of Sphere- and SO(3)-Valued Data by Relaxed Tikhonov Regularization',lat:52.13333,lon:11.61666,date:'17 March, 2024',status:'passed',location:'Magdeburg, Germany',note:'Otto-von-Guericke Universität, Magdeburg' },
+      { id:205,title:'OTW 2024 — Rényi-regularized Optimal Transport',lat: 52.52000,lon:13.40495,date:'13 March, 2024',status:'passed',location:'Berlin, Germany',note:'Humbold Universität Berlin, Germany' },
+      { id:206,title:'RRW 2024 — Denoising of Sphere- and SO(3)-Valued Data by Relaxed Regularization',lat: 51.3662,lon:8.7178,date:'9 February, 2024',status:'passed',location:'Bergkloster in Bestwig, Germany',note:'Fernuni Hagen, Germany' },
+      { id:301,title:'Workshop and Summer School on Applied Analysis 2023 — Denoising of Sphere-Valued Data by Relaxed Tikhonov Regularization',lat: 50.83,lon:12.91,date:'19 September, 2023',status:'passed',location:'Chemnitz, Germany',note:'TU Chemnitz, Germany' },
+      { id:401,title:'IPMS 2026 — Generalized Normalized Radon Commulative Distribution Transform for Pattern Recognitionand Classification',lat:35.917973,lon:14.409943,date:'1 June, 2026',status:'passed',location:'Malta, Malta',note:'IPMS 2026, Paradise Bay Resort Hotel, Malta' },
+      { id:402,title:'ILAS 2026 — Stochastic Zeroth-Order Calculation of Operator Quantities',lat:37.229572,lon:-80.413940,date:'18 May, 2026',status:'passed',location:'Blacksburg, USA',note:'ILAS 2026, Virgina Tech, USA' },
+      { id:403,title:'Research Visit — Stochastic Zeroth-Order Methoh for Computing Generalized Rayleigh Quotients',lat:40.0037,lon:-105.2630,date:'23 March, 2026',status:'passed',location:'Boulder, USA',note:'Research Visit, Boulder, USA' },
+      { id:404,title:'IS 2026 - Organizing Minisyposium — Optimal Transport in Imaging',lat:40.7695,lon:-111.8912,date:'16 November, 2026',status:'upcoming',location:'Salt Lake City, USA',note:'SIAM IS 2026, Salt Lake City, USA' },
+      { id:405,title:'FoCM 2026 - Zeroth-Order Methods for Computing Matrix Quantities',lat:48.2082,lon:16.3738,date:'16 July, 2026',status:'passed',location:'Vienna, Austria',note:'FoCM 2026, University of Vienna' },
+      { id:406,title:'GIB 2026 - Tight Convex Relaxed Regularization for Manifold-Valued Data',lat:52.516,lon:13.321,date:'30 September, 2026',status:'upcoming',location:'Berlin, Germany',note:'GIB 2026, PTB, Germany' },
+      { id:501,title:'GAMM 2027 - Thight Tikhonov Regularized Sphere-Valued Data',lat:48.39861,lon:9.99111,date:'8 March, 2027',status:'upcoming',location:'Ulm, Germany',note:'GAMM 2027, University of Ulm' },
+      { id:502,title:'LA 2027 - Randomized Singular Value Decompositions',lat:33.77005,lon:-118.19374,date:'24 May, 2027',status:'upcoming',location:'Long Beach, California, U.S.',note:'LA 2027, Hilton Long Beach' },
+    ];
+
+    // ---------- UI helpers & markers ----------
+    function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c])); }
+
+    // build year filter
+    const years = Array.from(new Set(events.map(e=> e.date? new Date(e.date).getFullYear() : 'unknown'))).sort((a,b)=>b-a);
+    const yearFilter = document.getElementById('yearFilter');
+    years.forEach(y=>{ const o=document.createElement('option'); o.value=String(y); o.textContent=String(y); yearFilter.appendChild(o); });
+
+    const markers = [];
+    const markersLayer = L.layerGroup().addTo(map);
+
+    function colorForStatus(s){
+      return s === 'upcoming' ? getComputedStyle(document.documentElement).getPropertyValue('--upcoming') || '#00d4ff' : (getComputedStyle(document.documentElement).getPropertyValue('--passed') || '#9aa4b2');
+    }
+
+    function createMarker(e){
+      const color = colorForStatus(e.status).trim() || '#00d4ff';
+      const html = `<span class="marker-pin" style="background:${color};"></span>`;
+      const icon = L.divIcon({ className:'custom-pin', html, iconSize:[16,16], iconAnchor:[8,8] });
+      const marker = L.marker([e.lat,e.lon], { icon });
+      const popupHtml =
+        `<div style="min-width:220px">
+           <strong style="font-size:14px">${escapeHtml(e.title)}</strong>
+           <div style="font-size:12px;color:#cbd6e6;margin-top:6px">${escapeHtml(e.note || e.location || '')}</div>
+           <div style="margin-top:8px;font-size:12px;color:var(--muted)">${escapeHtml(e.date || '')} • ${escapeHtml(e.location || '')}</div>
+         </div>`;
+      marker.bindPopup(popupHtml);
+      return marker;
+    }
+
+    function refreshMarkers(){
+      markersLayer.clearLayers();
+      document.getElementById('eventsList').innerHTML = '';
+      const q = (document.getElementById('search').value||'').toLowerCase().trim();
+      const y = yearFilter.value;
+      const filtered = events.filter(ev=>{
+        if(y !== 'all' && String(new Date(ev.date).getFullYear()) !== String(y)) return false;
+        if(q){
+          const hay = (ev.title + ' ' + (ev.note || '') + ' ' + (ev.location || '') + ' ' + (ev.description || '')).toLowerCase();
+          if(!hay.includes(q)) return false;
+        }
+        return true;
+      }).sort((a,b)=> new Date(b.date) - new Date(a.date));
+
+      filtered.forEach(e=>{
+        const m = createMarker(e);
+        markersLayer.addLayer(m);
+        const row = document.createElement('div');
+        row.className = 'event-row';
+        const pillColor = e.status === 'upcoming' ? 'darkgreen' : '#9aa4b2';
+        row.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center">
+                           <div><strong>${escapeHtml(e.title)}</strong><div class="small">${escapeHtml(e.location)} — ${escapeHtml(e.note||'')}</div></div>
+                           <div><span class="status-pill" style="background:${pillColor}; color:#031427">${escapeHtml(e.status)}</span></div>
+                         </div>
+                         <div class="small" style="margin-top:6px">${escapeHtml(e.date)}</div>`;
+        row.addEventListener('click', ()=>{
+          map.setView([e.lat,e.lon], Math.max(5,map.getZoom()));
+          setTimeout(()=> m.openPopup(), 250);
+        });
+        document.getElementById('eventsList').appendChild(row);
+      });
+    }
+
+    // initial render
+    refreshMarkers();
+
+    // controls
+    document.getElementById('search').addEventListener('input', refreshMarkers);
+    yearFilter.addEventListener('change', refreshMarkers);
+
+    document.getElementById('fitBtn').addEventListener('click', ()=>{
+      const group = markersLayer;
+      if(group.getLayers().length === 0) return;
+      const bounds = group.getBounds();
+      if(bounds.isValid()) map.fitBounds(bounds.pad(0.12));
+    });
+    document.getElementById('resetView').addEventListener('click', ()=> map.setView([20,0],2));
+
+    // tile scroll toggle
+    const enableBtn = document.getElementById('enableScroll');
+    enableBtn.addEventListener('click', ()=>{
+      if(map.scrollWheelZoom.enabled()){ map.scrollWheelZoom.disable(); enableBtn.textContent = 'Enable scroll'; }
+      else { map.scrollWheelZoom.enable(); enableBtn.textContent = 'Disable scroll'; }
+    });
+
+    // debug
+    console.log('Convergences map loaded — events:', events.length);
+  </script>
+
+
+  <aside class="profile-card">
+      <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Dr. Jonas Bresch</b></div><br>
+      <p><b>bresch (at) math.lmu.de</b></a><br>
+      <p><b>+49(0)30 31419003776</b></a><br>
+      <p>Institute of Mathematics<br>
+      Chair for Mathematical Foundations of Artificial Intelligence<br>
+      Ludwig-Maximilians-Universität München<br>
+      Akademiestraße 7<br>
+      512<br>
+      Munich, Germany<br><br>
+  <!-- </aside>-->
+  
+  
+  <!-- Links on the Sidebar -->
+   <!-- <aside class="social-links">-->
+    <!--<dd><a href="#">Google Scholar</a></dd>  -->
+    <dd><!----  TWITTER ICON  --->
+      <svg xmlns="https://www.w3.org/2000/svg" width="12" 
+          height="12" fill="currentColor" class="bi bi-twitter"
+          viewBox="0 0 16 16">
+          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+          </svg>
+          <a href="https://twitter.com/j_j_e_w_b", style="color:darkgreen">Twitter</a></dd>
+    <dd><svg xmlns="http://www.w3.org/2000/svg" width="12" 
+          height="12" fill="currentColor" class="bi bi-google"
+          viewBox="0 0 24 24">
+          <path d="M3.8423 0a1.0037 1.0037 0 0 0 -0.922 0.6078c-0.1536 0.3687 -0.0438 0.6275 0.2938 1.1113l6.9185 8.3597 -1.0223 1.1058a1.0393 1.0393 0 0 0 0.003 1.4229l1.2292 1.3135 -5.4391 6.4444c-0.2803 0.299 -0.4538 0.823 -0.2971 1.1986a1.0253 1.0253 0 0 0 0.9585 0.635 0.9133 0.9133 0 0 0 0.6891 -0.3405l5.783 -6.126 7.4902 8.0051a0.8527 0.8527 0 0 0 0.6835 0.2597 0.9575 0.9575 0 0 0 0.8777 -0.6138c0.1577 -0.377 -0.017 -0.7502 -0.306 -1.1407l-7.0518 -8.3418 1.0632 -1.13a0.9626 0.9626 0 0 0 0.0089 -1.3165L4.6336 0.4639s-0.3733 -0.4535 -0.768 -0.463zm0 0.272h0.0166c0.2179 0.0052 0.4874 0.2715 0.5644 0.3639l0.005 0.006 0.0052 0.0055 10.169 10.9905a0.6915 0.6915 0 0 1 -0.0072 0.945l-1.0666 1.133 -1.4982 -1.7724 -8.5994 -10.39c-0.3286 -0.472 -0.352 -0.6183 -0.2592 -0.841a0.7307 0.7307 0 0 1 0.6704 -0.4401Zm14.341 1.5701a0.877 0.877 0 0 0 -0.6554 0.2418l-5.6962 6.1584 1.6944 1.8319 5.3089 -6.5138c0.3251 -0.4335 0.479 -0.6603 0.3247 -1.0292a1.1205 1.1205 0 0 0 -0.9763 -0.689zm-7.6557 12.2823 1.3186 1.4135 -5.7864 6.1295a0.6494 0.6494 0 0 1 -0.4959 0.26 0.7516 0.7516 0 0 1 -0.706 -0.4669c-0.1119 -0.2682 0.0359 -0.6864 0.2442 -0.9083l0.0051 -0.0055 0.0047 -0.0055z" fill="#000000" stroke-width="1"></path>
+          </svg>
+          <a href="https://arxiv.org/search/?searchtype=author&query=Bresch%2C+J", style="color:darkgreen">arXiv</a></dd>
+    <dd><svg xmlns="http://www.w3.org/2000/svg" width="12" 
+          height="12" fill="currentColor" class="bi bi-google"
+          viewBox="0 0 20 20">
+          <path d='M18.88 1.099C18.147.366 17.265 0 16.233 0H3.746C2.714 0 1.832.366 1.099 1.099.366 1.832 0 2.714 0 3.746v12.487c0 1.032.366 1.914 1.099 2.647.733.733 1.615 1.099 2.647 1.099H6.66c.19 0 .333-.007.429-.02a.504.504 0 0 0 .286-.169c.095-.1.143-.245.143-.435l-.007-.885c-.004-.564-.006-1.01-.006-1.34l-.3.052c-.19.035-.43.05-.721.046a5.555 5.555 0 0 1-.904-.091 2.026 2.026 0 0 1-.872-.39 1.651 1.651 0 0 1-.572-.8l-.13-.3a3.25 3.25 0 0 0-.41-.663c-.186-.243-.375-.407-.566-.494l-.09-.065a.956.956 0 0 1-.17-.156.723.723 0 0 1-.117-.182c-.026-.061-.004-.111.065-.15.07-.04.195-.059.378-.059l.26.04c.173.034.388.138.643.311a2.1 2.1 0 0 1 .631.677c.2.355.44.626.722.813.282.186.566.28.852.28.286 0 .533-.022.742-.065a2.59 2.59 0 0 0 .585-.196c.078-.58.29-1.028.637-1.34a8.907 8.907 0 0 1-1.333-.234 5.314 5.314 0 0 1-1.223-.507 3.5 3.5 0 0 1-1.047-.872c-.277-.347-.505-.802-.683-1.365-.177-.564-.266-1.215-.266-1.952 0-1.049.342-1.942 1.027-2.68-.32-.788-.29-1.673.091-2.652.252-.079.625-.02 1.119.175.494.195.856.362 1.086.5.23.14.414.257.553.352a9.233 9.233 0 0 1 2.497-.338c.859 0 1.691.113 2.498.338l.494-.312a6.997 6.997 0 0 1 1.197-.572c.46-.174.81-.221 1.054-.143.39.98.424 1.864.103 2.653.685.737 1.028 1.63 1.028 2.68 0 .737-.089 1.39-.267 1.957-.177.568-.407 1.023-.689 1.366-.282.343-.633.63-1.053.865-.42.234-.828.403-1.223.507a8.9 8.9 0 0 1-1.333.235c.45.39.676 1.005.676 1.846v3.11c0 .147.021.266.065.357a.36.36 0 0 0 .208.189c.096.034.18.056.254.064.074.01.18.013.318.013h2.914c1.032 0 1.914-.366 2.647-1.099.732-.732 1.099-1.615 1.099-2.647V3.746c0-1.032-.367-1.914-1.1-2.647z' />
+          </svg>
+          <a href="https://github.com/JJEWBresch", style="color:darkgreen">GitHub</a></dd>
+    <dd><!----  GOOGLE ICON  --->
+      <svg xmlns="https://www.w3.org/2000/svg" width="12" 
+          height="12" fill="currentColor" class="bi bi-google"
+          viewBox="0 0 16 16">
+          <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003 a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+          </svg> 
+          <a href="https://scholar.google.com/citations?user=GdgyWoAAAAAJ&hl=de", style="color:darkgreen">Google Scholar</a></dd>
+    <dd><svg xmlns="http://www.w3.org/2000/svg" width="12" 
+          height="12" fill="currentColor" class="bi bi-google"
+          viewBox="0 0 32 32">
+          <path d="M16 0c-8.839 0-16 7.161-16 16s7.161 16 16 16c8.839 0 16-7.161 16-16s-7.161-16-16-16zM9.823 5.839c0.704 0 1.265 0.573 1.265 1.26 0 0.688-0.561 1.265-1.265 1.265-0.692-0.004-1.26-0.567-1.26-1.265 0-0.697 0.563-1.26 1.26-1.26zM8.864 9.885h1.923v13.391h-1.923zM13.615 9.885h5.197c4.948 0 7.125 3.541 7.125 6.703 0 3.439-2.687 6.699-7.099 6.699h-5.224zM15.536 11.625v9.927h3.063c4.365 0 5.365-3.312 5.365-4.964 0-2.687-1.713-4.963-5.464-4.963z"/></svg>
+          <a href="https://orcid.org/0009-0009-3855-0933", style="color:darkgreen">ORCID</a></dd>
+  </aside>
+
+  </main>
+  
+
+
+</body>
+</html>
