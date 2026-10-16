@@ -52,3 +52,37 @@ Verified 14 unique preprint records against the arXiv author list and version-1 
 ## Postdoc Support Fund award — 16 October 2026
 
 The user reported receiving more than €3,000 on 16 October 2026 for their SIAM Imaging Science 2026 trip (16–19 November, Salt Lake City). The award and amount are based on the user’s first-hand report; the institutional programme link is https://www.mathematik-informatik-statistik.uni-muenchen.de/postdoc-support-fond/index.html. The News card uses the existing LMU logo. The Events entry now acknowledges this travel funding.
+
+
+## Distinct News illustrations (October 2026 update)
+
+Paper figures are extracted from the corresponding arXiv PDFs; no experimental results have been redrawn. Figure numbering refers to the downloaded current paper versions. Preprint release dates remain arXiv v1 dates. Funding logos remain organization marks.
+
+- `assets/tikhonov-circle-convergence.png` — arXiv:2307.10980, PDF page 13. Figure 2: convergence of the circle-valued denoising methods.
+- `assets/generalized-nrcdt-features.png` — arXiv:2512.08099, PDF page 16. Figure 7: normalized Radon-CDT representations of three academic templates.
+- `assets/zeroth-order-geometry.png` — arXiv:2604.26913, PDF page 18. Figure 2: geometric construction used in the convergence analysis.
+- `assets/tikhonov-sphere-convergence.png` — arXiv:2307.10980, PDF page 14. Figure 4: convergence of the sphere-valued denoising methods.
+- `assets/generalized-nrcdt-animals.png` — arXiv:2512.08099, PDF page 23. Figure 11: animal templates and their affinely transformed samples.
+- `assets/renyi-transport-maps.png` — arXiv:2404.18834, PDF page 39. Figure 9, first example: unregularized, KL-regularized and Rényi-regularized transport maps. The empirical-measure example was also studied by Feydy et al. (2019).
+- `assets/metric-cell-clusters.png` — arXiv:2507.13094, PDF page 33. Figure 6: t-SNE visualizations of cell clusters using learned distances on the full scRNAseq dataset.
+- `assets/stiefel-signal.png` — arXiv:2506.22826, PDF page 8. Figure 2: clean, noisy and restored Stiefel-valued signal.
+- `assets/nrcdt-feature-curves.png` — arXiv:2506.08761, PDF page 20. Figure 2: normalized Radon-CDT feature curves for two affine-transformed classes.
+- `assets/hyperbolic-synthetic.png` — arXiv:2410.16149, PDF page 9. Figure 1: restoration of a smooth synthetic hyperbolic-valued signal, with its trajectories on the hyperboloid.
+- `assets/adjoint-mismatch-line-search.png` — arXiv:2503.21361, PDF page 10. Figure 1: line-search function shapes for different coefficient signs.
+- `assets/tikhonov-coral-chromaticity.png` — arXiv:2307.10980, PDF page 15. Figure 6: clean, noisy and restored RGB chromaticity of the coral image.
+- `assets/radon-projection-geometry.png` — arXiv:2411.16282, PDF page 3. Figure 1: Radon-transform geometry and integration along lines.
+- `assets/hyperbolic-gaussian-image.png` — arXiv:2410.16149, PDF page 10. Figure 2: restoration of empirical means and standard deviations from a Gaussian image model.
+- `assets/operator-norm-sphere-geometry.png` — arXiv:2410.08297, PDF page 17. Figure 2: three-dimensional geometry used in the operator-norm analysis.
+- `assets/sphere-tv-toy-image.png` — arXiv:2404.13181, PDF page 7. Figure 4: clean, noisy and restored circle-valued toy image.
+- `assets/sphere-tv-barcode.png` — arXiv:2404.13181, PDF page 5. Figure 1: a barcode denoising example comparing the restoration methods.
+- `assets/renyi-poisson-plans.png` — arXiv:2404.18834, PDF page 38. Figure 8: Rényi- and Tsallis-regularized transport plans for mixed Poisson marginals.
+- `assets/renyi-parameter-plans.png` — arXiv:2404.18834, PDF page 36. Figure 5: transport plans across Rényi and regularization parameters.
+- `assets/renyi-ring-maps.png` — arXiv:2404.18834, PDF page 39. Figure 9, second example: transport maps between ring-shaped empirical measures, comparing unregularized, KL and Rényi regularization.
+- `assets/sphere-tv-qr.png` — arXiv:2404.13181, PDF page 6. Figure 2: QR-code denoising using relaxed total variation.
+- `assets/tikhonov-coral-hue.png` — arXiv:2307.10980, PDF page 15. Figure 5: clean, noisy and restored hue of the coral image.
+- `assets/renyi-gaussian-plans.png` — arXiv:2404.18834, PDF page 3. Figure 1: Gaussian transport plans for decreasing KL regularization, alongside the unregularized plan.
+- `assets/tikhonov-sphere-image.png` — arXiv:2307.10980, PDF page 13. Figure 3: clean, noisy and restored sphere-valued image.
+- `assets/tikhonov-rotation-signal.png` — arXiv:2307.10980, PDF page 16. Figure 7: clean, noisy and restored rotation-valued signal.
+- `assets/tikhonov-circle-signal.png` — arXiv:2307.10980, PDF page 13. Figure 1: clean, noisy and restored circle-valued signal.
+
+The first transport-map example in Figure 9 of arXiv:2404.18834 references Feydy, Séjourné, Vialard, Amari, Trouvé and Peyré, “Interpolating between optimal transport and MMD using Sinkhorn divergences” (AISTATS 2019), reference [25] of the Rényi paper.
