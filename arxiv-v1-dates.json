@@ -1,0 +1,100 @@
+[
+  {
+    "id": "2404.18834",
+    "date": "2024/04/29",
+    "title": "Interpolating between Optimal Transport and KL regularized Optimal Transport using Rényi Divergences",
+    "iso": "2024-04-29",
+    "display": "29 April 2024"
+  },
+  {
+    "id": "2512.08099",
+    "date": "2025/12/08",
+    "title": "Generalizations of the Normalized Radon Cumulative Distribution Transform for Limited Data Recognition",
+    "iso": "2025-12-08",
+    "display": "8 December 2025"
+  },
+  {
+    "id": "2512.05520",
+    "date": "2025/12/05",
+    "title": "Stochastic Zeroth-Order Method for Computing Generalized Rayleigh Quotients",
+    "iso": "2025-12-05",
+    "display": "5 December 2025"
+  },
+  {
+    "id": "2307.10980",
+    "date": "2023/07/20",
+    "title": "Denoising of Sphere- and SO(3)-Valued Data by Relaxed Tikhonov Regularization",
+    "iso": "2023-07-20",
+    "display": "20 July 2023"
+  },
+  {
+    "id": "2410.16149",
+    "date": "2024/10/21",
+    "title": "Denoising Hyperbolic-Valued Data by Relaxed Regularizations",
+    "iso": "2024-10-21",
+    "display": "21 October 2024"
+  },
+  {
+    "id": "2506.22826",
+    "date": "2025/06/28",
+    "title": "Denoising Multi-Color QR Codes and Stiefel-Valued Data by Relaxed Regularizations",
+    "iso": "2025-06-28",
+    "display": "28 June 2025"
+  },
+  {
+    "id": "2506.08761",
+    "date": "2025/06/10",
+    "title": "Normalized Radon Cumulative Distribution Transforms for Invariance and Robustness in Optimal Transport Based Image Classification",
+    "iso": "2025-06-10",
+    "display": "10 June 2025"
+  },
+  {
+    "id": "2503.21361",
+    "date": "2025/03/27",
+    "title": "Computing adjoint mismatch of linear maps",
+    "iso": "2025-03-27",
+    "display": "27 March 2025"
+  },
+  {
+    "id": "2507.13094",
+    "date": "2025/07/17",
+    "title": "Unsupervised Ground Metric Learning",
+    "iso": "2025-07-17",
+    "display": "17 July 2025"
+  },
+  {
+    "id": "2410.08297",
+    "date": "2024/10/10",
+    "title": "Matrix-free stochastic calculation of operator norms without using adjoints",
+    "iso": "2024-10-10",
+    "display": "10 October 2024"
+  },
+  {
+    "id": "2404.13181",
+    "date": "2024/04/19",
+    "title": "Denoising Sphere-Valued Data by Relaxed Total Variation Regularization",
+    "iso": "2024-04-19",
+    "display": "19 April 2024"
+  },
+  {
+    "id": "2411.16282",
+    "date": "2024/11/25",
+    "title": "Max-Normalized Radon Cumulative Distribution Transform for Limited Data Classification",
+    "iso": "2024-11-25",
+    "display": "25 November 2024"
+  },
+  {
+    "id": "2603.13503",
+    "date": "2026/03/13",
+    "title": "A Discrete Radon Transform Based on the Area of Cube-Plane Intersection",
+    "iso": "2026-03-13",
+    "display": "13 March 2026"
+  },
+  {
+    "id": "2604.26913",
+    "date": "2026/04/29",
+    "title": "Generalization of Zeroth-Order Method for Quotients of Quadratic Functions",
+    "iso": "2026-04-29",
+    "display": "29 April 2026"
+  }
+]

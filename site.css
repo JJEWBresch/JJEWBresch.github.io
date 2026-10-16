@@ -1,0 +1,30 @@
+/* Shared academic-site layout. Original profile font and inline SVG marks are retained. */
+.sidebar h2{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;line-height:1.25;margin:0 0 20px}
+.profile-links a{display:flex;align-items:center;gap:7px;line-height:1.6}
+.profile-links svg{flex:none;width:12px;height:12px;display:inline-block;color:#333}
+.page-content{min-width:0}
+.page-content>h1:first-child{margin-top:5px;margin-bottom:24px}
+.page-content li{margin-bottom:10px}
+.page-content li li{margin-bottom:5px}
+.page-content ul{padding-left:22px}
+.page-content>strong{display:block;margin-top:22px}
+.page-content>strong+br{display:none}
+.gallery-content .image123{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px;margin:12px 0 28px;clear:both}
+.gallery-content .image123>div{float:none!important;margin:0!important;max-width:100%}
+.gallery-content .image123 img{max-width:100%;object-fit:contain}
+.gallery-content .image123 p{font-size:12px;margin:8px 0;max-width:290px}
+.map-content{display:grid;grid-template-columns:minmax(185px,.8fr) minmax(0,1.6fr);grid-template-areas:'events map';gap:20px;align-items:start}
+.map-content .events-panel,.map-content .map-card{height:clamp(420px,65vh,680px)}
+.map-content .panel{margin:0;border:0;box-shadow:none}
+.map-content .controls-row{grid-template-columns:minmax(0,1fr)}
+.map-content .error-banner{color:#333}
+.map-content .events-list{padding-right:8px}
+.navigation a:focus,.navigation a:active{color:#fff;text-decoration:none}
+@media(max-width:991px){.map-content{grid-template-columns:minmax(0,1fr);grid-template-areas:'map' 'events'}.map-content .events-panel{height:420px}.map-content .map-card{height:420px}}
+@media(max-width:767px){.sidebar h2{font-size:32px}.map-content .map-card{height:380px}.gallery-content .image123{gap:16px}.page-content>h1:first-child{font-size:30px}}
+/* Bootstrap's clearfix pseudo-elements must not become grid/flex children. */
+.layout::before,.layout::after,.nav-inner::before,.nav-inner::after{display:none!important;content:none!important}
+.page-content>img.img-responsive{height:auto!important;max-height:360px;object-fit:contain}
+
+/* Research illustrations in the complete bibliography. */
+.page-content li>figure{margin:14px 0 24px}.page-content li>figure img{width:auto;max-width:100%;max-height:200px;object-fit:contain}.page-content li>figure figcaption{font-size:11px;color:#666;max-width:650px;margin-top:6px}.archive-scope{font-size:12px;color:#666;margin:0 0 18px}
