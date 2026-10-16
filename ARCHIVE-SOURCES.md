@@ -86,3 +86,8 @@ Paper figures are extracted from the corresponding arXiv PDFs; no experimental r
 - `assets/tikhonov-circle-signal.png` — arXiv:2307.10980, PDF page 13. Figure 1: clean, noisy and restored circle-valued signal.
 
 The first transport-map example in Figure 9 of arXiv:2404.18834 references Feydy, Séjourné, Vialard, Amari, Trouvé and Peyré, “Interpolating between optimal transport and MMD using Sinkhorn divergences” (AISTATS 2019), reference [25] of the Rényi paper.
+
+
+## DStatG funding acknowledgment (16 October 2026)
+
+DStatG context for the SIAM Imaging Science travel award: supplied by Jonas Bresch. Official organization name and logo: https://dstatg.de/ . Logo asset copied unchanged from https://dstatg.de/wp-content/uploads/2024/11/Logo-2024-klein.png .
