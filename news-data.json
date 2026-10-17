@@ -10,7 +10,7 @@
     "date": "2026-10-01",
     "kind": "Milestone",
     "title": "A new connection with SIAM",
-    "html": "<article class=\"news-item\" data-category=\"Milestone\" data-date=\"2026-10-01\"><div class=\"meta\"><span class=\"tag\">Milestone</span><span>October 2026</span></div><h2>A new connection with SIAM</h2><p>Since October 2026, I am a member of the Society for Industrial and Applied Mathematics (SIAM).</p><div class=\"links\"><a href=\"https://www.siam.org/\">SIAM <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "html": "<article class=\"news-item\" data-category=\"Milestone\" data-date=\"2026-10-01\"><div class=\"meta\"><span class=\"tag\">Milestone</span><span>October 2026</span></div><h2>A new connection with SIAM</h2><p>Since October 2026, I am a member of the Society for Industrial and Applied Mathematics (SIAM).</p><div class=\"logos\" aria-label=\"Membership organization\"><a class=\"logo siam\" href=\"https://www.siam.org/\" style=\"width:260px\"><img loading=\"lazy\" src=\"assets/siam.svg\" alt=\"Society for Industrial and Applied Mathematics (SIAM)\" style=\"width:244px;height:auto\"></a></div><div class=\"links\"><a href=\"https://www.siam.org/\">SIAM <span aria-hidden=\"true\">↗</span></a></div></article>",
     "paper": null
   },
   {
@@ -122,7 +122,7 @@
     "date": "2026-04-01",
     "kind": "Milestone",
     "title": "Completing my time as a BMS Phase II student",
-    "html": "<article class=\"news-item\" data-category=\"Milestone\" data-date=\"2026-04-01\"><div class=\"meta\"><span class=\"tag\">Milestone</span><span>April 2026</span></div><h2>Completing my time as a BMS Phase II student</h2><p>My membership as a Phase II student of the Berlin Mathematical School ended in April 2026.</p><div class=\"links\"><a href=\"https://www.math-berlin.de/\">Berlin Mathematical School <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "html": "<article class=\"news-item\" data-category=\"Milestone\" data-date=\"2026-04-01\"><div class=\"meta\"><span class=\"tag\">Milestone</span><span>April 2026</span></div><h2>Completing my time as a BMS Phase II student</h2><p>From February 2024 until April 2026, I was a member and phase II student of the Berlin Mathematical School.</p><div class=\"links\"><a href=\"https://www.math-berlin.de/\">Berlin Mathematical School <span aria-hidden=\"true\">↗</span></a></div></article>",
     "paper": null
   },
   {
@@ -375,6 +375,13 @@
     "kind": "Conference",
     "title": "Relaxed manifold-valued denoising in Hagen",
     "html": "<article class=\"news-item\" data-category=\"Conference\" data-date=\"2024-02-09\"><div class=\"meta\"><span class=\"tag\">Conference</span><span>9 February 2024</span></div><h2>Relaxed manifold-valued denoising in Hagen</h2><p>At the Rhein-Ruhr Workshop at FernUniversität in Hagen, I presented denoising sphere- and SO(3)-valued data by relaxed Tikhonov regularization.</p><figure><a href=\"assets/tikhonov-sphere-image.png\" aria-label=\"Open full-size illustration\"><img loading=\"lazy\" decoding=\"async\" src=\"assets/tikhonov-sphere-image.png\" alt=\"Figure 3: clean, noisy and restored sphere-valued image.\"></a><figcaption>Figure 3: clean, noisy and restored sphere-valued image. <a href=\"https://arxiv.org/abs/2307.10980\">Source paper ↗</a></figcaption></figure><div class=\"links\"><a href=\"https://www.fernuni-hagen.de/angewandte-mathematik/rrw/workshop2024.shtml\">Event <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": null
+  },
+  {
+    "date": "2024-02-01",
+    "kind": "Milestone",
+    "title": "Joining the Berlin Mathematical School",
+    "html": "<article class=\"news-item\" data-category=\"Milestone\" data-date=\"2024-02-01\"><div class=\"meta\"><span class=\"tag\">Milestone</span><span>February 2024</span></div><h2>Joining the Berlin Mathematical School</h2><p>In February 2024, I joined the Berlin Mathematical School (BMS) as a member and phase II student. The BMS is the graduate school of MATH+, the Berlin Mathematics Research Center.</p><div class=\"logos\" aria-label=\"BMS and MATH+\"><a class=\"logo\" href=\"https://www.math-berlin.de/\"><img loading=\"lazy\" src=\"assets/bms.svg\" alt=\"Berlin Mathematical School (BMS)\"></a><a class=\"logo\" href=\"https://mathplus.de/\"><img loading=\"lazy\" src=\"assets/mathplus.png\" alt=\"MATH+ Berlin Mathematics Research Center\"></a></div><div class=\"links\"><a href=\"https://www.math-berlin.de/\">Berlin Mathematical School <span aria-hidden=\"true\">↗</span></a><a href=\"https://mathplus.de/\">MATH+ <span aria-hidden=\"true\">↗</span></a></div></article>",
     "paper": null
   },
   {

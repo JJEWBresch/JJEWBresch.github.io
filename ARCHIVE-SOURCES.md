@@ -98,3 +98,10 @@ DStatG context for the SIAM Imaging Science travel award: supplied by Jonas Bres
 - Membership details supplied by Jonas Bresch: BMS Phase II membership until April 2026; SIAM membership from October 2026. Month-only records use day 1 for sorting; the visible date states only the month. Other memberships have no newly inferred dates.
 - BMS certificate ceremony: 10 July 2026, Freie Universität Berlin. Source: https://www.math-berlin.de/media-press/news/bms-certificate-ceremony-2026 .
 - Photo `assets/bms-certificate-ceremony-2026.png`: supplied by Jonas Bresch as `CertCerem26-20.png`; reproduced unchanged. Credit on the official ceremony announcement: © Julia Baier / MATH+.
+
+
+## BMS membership start and membership logos
+
+- BMS membership and phase II student status: February 2024 until April 2026, supplied by Jonas Bresch. The February 2024 post uses day 1 for sorting only; the displayed date is month-only.
+- SIAM logo: official website asset https://www.siam.org/assets/images/accents/siam-logo.svg , copied unchanged as `assets/siam.svg` and linked to SIAM. Logo guidance: https://www.siam.org/newsroom/logo-guide .
+- BMS and MATH+ logos: existing official assets `assets/bms.svg` and `assets/mathplus.png`, reused unchanged.
