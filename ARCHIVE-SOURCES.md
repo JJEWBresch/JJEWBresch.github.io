@@ -91,3 +91,10 @@ The first transport-map example in Figure 9 of arXiv:2404.18834 references Feydy
 ## DStatG funding acknowledgment (16 October 2026)
 
 DStatG context for the SIAM Imaging Science travel award: supplied by Jonas Bresch. Official organization name and logo: https://dstatg.de/ . Logo asset copied unchanged from https://dstatg.de/wp-content/uploads/2024/11/Logo-2024-klein.png .
+
+
+## Membership milestones and BMS ceremony (October 2026 update)
+
+- Membership details supplied by Jonas Bresch: BMS Phase II membership until April 2026; SIAM membership from October 2026. Month-only records use day 1 for sorting; the visible date states only the month. Other memberships have no newly inferred dates.
+- BMS certificate ceremony: 10 July 2026, Freie Universität Berlin. Source: https://www.math-berlin.de/media-press/news/bms-certificate-ceremony-2026 .
+- Photo `assets/bms-certificate-ceremony-2026.png`: supplied by Jonas Bresch as `CertCerem26-20.png`; reproduced unchanged. Credit on the official ceremony announcement: © Julia Baier / MATH+.

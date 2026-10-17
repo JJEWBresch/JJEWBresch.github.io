@@ -7,6 +7,13 @@
     "paper": null
   },
   {
+    "date": "2026-10-01",
+    "kind": "Milestone",
+    "title": "A new connection with SIAM",
+    "html": "<article class=\"news-item\" data-category=\"Milestone\" data-date=\"2026-10-01\"><div class=\"meta\"><span class=\"tag\">Milestone</span><span>October 2026</span></div><h2>A new connection with SIAM</h2><p>Since October 2026, I am a member of the Society for Industrial and Applied Mathematics (SIAM).</p><div class=\"links\"><a href=\"https://www.siam.org/\">SIAM <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": null
+  },
+  {
     "date": "2026-09-30",
     "kind": "Conference",
     "title": "Tight relaxations on the Berlin programme",
@@ -33,6 +40,13 @@
     "title": "Operator norms, without the adjoint",
     "html": "<article class=\"news-item\" data-category=\"Publication\" data-paper=\"2410.08297\" data-date=\"2026-09-01\"><div class=\"meta\"><span class=\"tag\">Publication</span><span>September 2026</span></div><h2>Operator norms, without the adjoint</h2><p>Our matrix-free stochastic method for estimating operator norms appears in SIAM Journal on Matrix Analysis and Applications, 47(3), 1349–1374. With Dirk A. Lorenz, Felix Schneppe and Maximilian Winkler. Accepted in March; available open access since July.</p><figure><a href=\"assets/operator-norm.png\" aria-label=\"Open full-size illustration\"><img loading=\"lazy\" decoding=\"async\" src=\"assets/operator-norm.png\" alt=\"Figure 6: convergence over 50 runs for Gaussian matrices of different sizes.\"></a><figcaption>Figure 6: convergence over 50 runs for Gaussian matrices of different sizes.</figcaption></figure><div class=\"links\"><a href=\"https://doi.org/10.1137/25M1772277\">Read the article <span aria-hidden=\"true\">↗</span></a><a href=\"https://arxiv.org/abs/2410.08297\">Open preprint <span aria-hidden=\"true\">↗</span></a></div></article>",
     "paper": "2410.08297"
+  },
+  {
+    "date": "2026-07-10",
+    "kind": "Milestone",
+    "title": "Celebrating BMS graduation in Berlin",
+    "html": "<article class=\"news-item\" data-category=\"Milestone\" data-date=\"2026-07-10\"><div class=\"meta\"><span class=\"tag\">Milestone</span><span>10 July 2026</span></div><h2>Celebrating BMS graduation in Berlin</h2><p>I celebrated my BMS graduation at the certificate ceremony on 10 July 2026 at Freie Universität Berlin. A special opportunity to mark the completion of Phase II with the BMS community, family and friends.</p><figure><a href=\"assets/bms-certificate-ceremony-2026.png\" aria-label=\"Open full-size ceremony photograph\"><img loading=\"lazy\" decoding=\"async\" src=\"assets/bms-certificate-ceremony-2026.png\" width=\"600\" height=\"380\" alt=\"Jonas Bresch with family and guests at the BMS certificate ceremony, holding a certificate and sunflower.\"></a><figcaption>BMS certificate ceremony, 10 July 2026, Freie Universität Berlin. Photo: © Julia Baier / MATH+. <a href=\"https://www.math-berlin.de/media-press/news/bms-certificate-ceremony-2026\">BMS announcement ↗</a></figcaption></figure><div class=\"links\"><a href=\"https://www.math-berlin.de/media-press/news/bms-certificate-ceremony-2026\">BMS certificate ceremony <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": null
   },
   {
     "date": "2026-07-08",
@@ -103,6 +117,13 @@
     "title": "Robust image classification through transport",
     "html": "<article class=\"news-item\" data-category=\"Publication\" data-paper=\"2506.08761\" data-date=\"2026-04-01\"><div class=\"meta\"><span class=\"tag\">Publication</span><span>April 2026</span></div><h2>Robust image classification through transport</h2><p>Our normalized Radon cumulative distribution transforms paper is available in SIAM Journal on Imaging Sciences, 19(2), 677–709. With Matthias Beckmann and Robert Beinert, we study invariance and robustness in optimal transport based image classification. Accepted in February 2026.</p><figure><a href=\"assets/nrcdt.png\" aria-label=\"Open full-size illustration\"><img loading=\"lazy\" decoding=\"async\" src=\"assets/nrcdt.png\" alt=\"Figure 1: synthetic shape templates used in the normalized Radon-CDT classification experiments.\"></a><figcaption>Figure 1: synthetic shape templates used in the normalized Radon-CDT classification experiments.</figcaption></figure><div class=\"links\"><a href=\"https://doi.org/10.1137/25M1767741\">Read the article <span aria-hidden=\"true\">↗</span></a><a href=\"https://arxiv.org/abs/2506.08761\">Open preprint <span aria-hidden=\"true\">↗</span></a></div></article>",
     "paper": "2506.08761"
+  },
+  {
+    "date": "2026-04-01",
+    "kind": "Milestone",
+    "title": "Completing my time as a BMS Phase II student",
+    "html": "<article class=\"news-item\" data-category=\"Milestone\" data-date=\"2026-04-01\"><div class=\"meta\"><span class=\"tag\">Milestone</span><span>April 2026</span></div><h2>Completing my time as a BMS Phase II student</h2><p>My membership as a Phase II student of the Berlin Mathematical School ended in April 2026.</p><div class=\"links\"><a href=\"https://www.math-berlin.de/\">Berlin Mathematical School <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": null
   },
   {
     "date": "2026-03-23",
