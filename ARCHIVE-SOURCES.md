@@ -105,3 +105,11 @@ DStatG context for the SIAM Imaging Science travel award: supplied by Jonas Bres
 - BMS membership and phase II student status: February 2024 until April 2026, supplied by Jonas Bresch. The February 2024 post uses day 1 for sorting only; the displayed date is month-only.
 - SIAM logo: official website asset https://www.siam.org/assets/images/accents/siam-logo.svg , copied unchanged as `assets/siam.svg` and linked to SIAM. Logo guidance: https://www.siam.org/newsroom/logo-guide .
 - BMS and MATH+ logos: existing official assets `assets/bms.svg` and `assets/mathplus.png`, reused unchanged.
+
+
+## Ground metric learning publication News update (26 October 2026)
+
+- Publication metadata: https://link.springer.com/article/10.1007/s00365-026-09788-x (published 25 October 2026). Authors: Janis Auffenberg, Jonas Bresch, Oleh Melnyk and Gabriele Steidl.
+- `assets/metric-anisotropic-distances.png`: cropped from published Figure 6. Retains the four learned-distance columns (normalized and non-normalized RBF-MEV/GMEV), including feature and sample distance matrices and enlarged details. The original anisotropic dataset image and Euclidean comparison column are omitted. No matrices were recalculated or redrawn.
+- `assets/metric-full-cell-gene-clusters.png`: complete published Figures 9 (cells) and 10 (marker genes), stacked with descriptive panel labels. Full scRNA-seq dataset; plotted results unchanged. Used for the preprint News entry, with source explicitly identified as the published article.
+- Original figure URLs: https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs00365-026-09788-x/MediaObjects/365_2026_9788_Fig6_HTML.png ; corresponding Fig9_HTML.png and Fig10_HTML.png files in the same MediaObjects directory.
