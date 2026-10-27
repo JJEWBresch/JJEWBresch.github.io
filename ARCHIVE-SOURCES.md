@@ -113,3 +113,7 @@ DStatG context for the SIAM Imaging Science travel award: supplied by Jonas Bres
 - `assets/metric-anisotropic-distances.png`: cropped from published Figure 6. Retains the four learned-distance columns (normalized and non-normalized RBF-MEV/GMEV), including feature and sample distance matrices and enlarged details. The original anisotropic dataset image and Euclidean comparison column are omitted. No matrices were recalculated or redrawn.
 - `assets/metric-full-cell-gene-clusters.png`: complete published Figures 9 (cells) and 10 (marker genes), stacked with descriptive panel labels. Full scRNA-seq dataset; plotted results unchanged. Used for the preprint News entry, with source explicitly identified as the published article.
 - Original figure URLs: https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs00365-026-09788-x/MediaObjects/365_2026_9788_Fig6_HTML.png ; corresponding Fig9_HTML.png and Fig10_HTML.png files in the same MediaObjects directory.
+
+## Research notes in News
+
+Three Notes posts use the dates printed on their PDFs: Boulder and Blacksburg, 24 May 2026; John transform, 17 July 2026. The first two illustrations are explanatory SVG schematics, not numerical experiments. The John-transform illustration is Figure 3 from page 9 of docs/idea_IPMS2026.pdf, cropped without changing the plotted objects.

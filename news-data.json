@@ -49,6 +49,13 @@
     "paper": "2410.08297"
   },
   {
+    "date": "2026-07-17",
+    "kind": "Notes",
+    "title": "A new view of object classification",
+    "html": "<article class=\"news-item\" data-category=\"Notes\" data-date=\"2026-07-17\"><div class=\"meta\"><span class=\"tag\">Notes</span><span>17 July 2026</span></div><h2>A new view of object classification</h2><p><em>Note on the John Transform for Object Classification</em>. The John transform connects projections, transport features and object classification. This note, inspired by IPMS 2026 in Malta, explores image and 3D-object recognition under translation, scaling and rotation.</p><figure><a href=\"assets/note-john-3d-objects.png\" aria-label=\"Open full-size illustration\"><img loading=\"lazy\" decoding=\"async\" src=\"assets/note-john-3d-objects.png\" style=\"width:100%;height:auto;max-height:none\" alt=\"Three-dimensional academic objects with rotation and anisotropic scaling (Figure 3).\"></a><figcaption>Three-dimensional academic objects with rotation and anisotropic scaling (Figure 3). <a href=\"docs/idea_IPMS2026.pdf\">Read the note ↗</a></figcaption></figure><div class=\"links\"><a href=\"docs/idea_IPMS2026.pdf\">Open note (PDF) <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": null
+  },
+  {
     "date": "2026-07-10",
     "kind": "Milestone",
     "title": "Celebrating BMS graduation in Berlin",
@@ -88,6 +95,20 @@
     "kind": "Funding",
     "title": "DAAD support for IPMS in Malta",
     "html": "<article class=\"news-item\" data-category=\"Funding\" data-date=\"2026-06-01\"><div class=\"meta\"><span class=\"tag\">Funding</span><span>June 2026</span></div><h2>DAAD support for IPMS in Malta</h2><p>I received €1,000 in DAAD travel support (first travel category) for participation in IPMS 2026 in Malta. Thank you for supporting the exchange of ideas on inverse problems and imaging.</p><div class=\"logos\" aria-label=\"Funding organizations\"><a class=\"logo daad\" href=\"https://www.daad.de/en/\"><img loading=\"lazy\" src=\"assets/daad.svg\" alt=\"DAAD\"></a></div><div class=\"links\"><a href=\"https://jjewbresch.github.io/events.html\">Event and funding acknowledgment <span aria-hidden=\"true\">↗</span></a><a href=\"https://www.daad.de/en/\">DAAD <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": null
+  },
+  {
+    "date": "2026-05-24",
+    "kind": "Notes",
+    "title": "Random directions for kernel learning",
+    "html": "<article class=\"news-item\" data-category=\"Notes\" data-date=\"2026-05-24\"><div class=\"meta\"><span class=\"tag\">Notes</span><span>24 May 2026</span></div><h2>Random directions for kernel learning</h2><p><em>Note on a Randomized Kernel Ridge Regression and Constrained Quadratic Problem</em>. Inspired by a research visit to Stephen Becker’s group at CU Boulder, this note explores randomized updates for kernel ridge regression and constrained quadratic optimization.</p><figure><a href=\"assets/note-kernel-random-directions.svg\" aria-label=\"Open full-size illustration\"><img loading=\"lazy\" decoding=\"async\" src=\"assets/note-kernel-random-directions.svg\" style=\"width:100%;height:auto;max-height:none\" alt=\"Method schematic based on the note: random directions, step selection and coefficient updates; illustrative level sets.\"></a><figcaption>Method schematic based on the note: random directions, step selection and coefficient updates; illustrative level sets. <a href=\"docs/idea_Boulder.pdf\">Read the note ↗</a></figcaption></figure><div class=\"links\"><a href=\"docs/idea_Boulder.pdf\">Open note (PDF) <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": null
+  },
+  {
+    "date": "2026-05-24",
+    "kind": "Notes",
+    "title": "A randomized search inside Krylov spaces",
+    "html": "<article class=\"news-item\" data-category=\"Notes\" data-date=\"2026-05-24\"><div class=\"meta\"><span class=\"tag\">Notes</span><span>24 May 2026</span></div><h2>A randomized search inside Krylov spaces</h2><p><em>Note on a Randomized Krylov Subspace Method</em>. Inspired by ILAS 2026 in Blacksburg, this note develops a randomized search in Krylov coordinates for least-squares problems, using matrix–vector products and a step that minimizes the residual along each search direction.</p><figure><a href=\"assets/note-krylov-subspace.svg\" aria-label=\"Open full-size illustration\"><img loading=\"lazy\" decoding=\"async\" src=\"assets/note-krylov-subspace.svg\" style=\"width:100%;height:auto;max-height:none\" alt=\"Method schematic based on the note: generate a Krylov subspace, sample a direction and minimize the residual along it.\"></a><figcaption>Method schematic based on the note: generate a Krylov subspace, sample a direction and minimize the residual along it. <a href=\"docs/idea_Blacksburg.pdf\">Read the note ↗</a></figcaption></figure><div class=\"links\"><a href=\"docs/idea_Blacksburg.pdf\">Open note (PDF) <span aria-hidden=\"true\">↗</span></a></div></article>",
     "paper": null
   },
   {
