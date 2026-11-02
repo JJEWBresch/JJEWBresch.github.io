@@ -123,3 +123,5 @@ Berlin GIP post: assets/gip-2026-tightness-numerics.png is the Tikhonov panel cr
 ## Stochastic Rayleigh-Ritz Ascent (2610.42071)
 
 Metadata and version-1 date: https://arxiv.org/abs/2610.42071 (30 October 2026), Jonas Bresch and Oleh Melnyk. News image rayleigh-ritz-figure3-column2.png extracts the second column of Figure 3 from PDF page 20 of https://arxiv.org/pdf/2610.42071v1. Both plots (d=20, delta=0.1) are preserved, with explanatory titles and selected legend entries placed outside the unchanged plots. The preprint is added to the Publications page without a visualization.
+
+The Rayleigh-Ritz Figure 3 second-column illustration was re-extracted from the original PDF at 9600-pixel page height and arranged left to right (mean error, entrance-time survival). Final PNG: 3240 × 1480 pixels; each plot is extracted at 1500 × 1180 pixels without upscaling.
