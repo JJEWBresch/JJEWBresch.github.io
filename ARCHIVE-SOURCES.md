@@ -119,3 +119,7 @@ DStatG context for the SIAM Imaging Science travel award: supplied by Jonas Bres
 Three Notes posts use the dates printed on their PDFs: Boulder and Blacksburg, 24 May 2026; John transform, 17 July 2026. The first two illustrations are explanatory SVG schematics, not numerical experiments. The John-transform illustration is Figure 3 from page 9 of docs/idea_IPMS2026.pdf, cropped without changing the plotted objects.
 
 Berlin GIP post: assets/gip-2026-tightness-numerics.png is the Tikhonov panel cropped from PDF page 56 (numbered slide 7/12) of /Volumes/Jonas/tagungen/2026-GIP-Berlin/talk/jonas_bresch_talk_gip2026_long.pdf. The graph data and legend are unchanged. These are parameter sweeps, labelled as such in the caption.
+
+## Stochastic Rayleigh-Ritz Ascent (2610.42071)
+
+Metadata and version-1 date: https://arxiv.org/abs/2610.42071 (30 October 2026), Jonas Bresch and Oleh Melnyk. News image rayleigh-ritz-figure3-column2.png extracts the second column of Figure 3 from PDF page 20 of https://arxiv.org/pdf/2610.42071v1. Both plots (d=20, delta=0.1) are preserved, with explanatory titles and selected legend entries placed outside the unchanged plots. The preprint is added to the Publications page without a visualization.

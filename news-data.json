@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-10-30",
+    "kind": "Preprint",
+    "title": "Random planes, global linear convergence",
+    "html": "<article class=\"news-item\" data-category=\"Preprint\" data-paper=\"2610.42071\" data-date=\"2026-10-30\"><div class=\"meta\"><span class=\"tag\">Preprint</span><span>30 October 2026</span></div><h2>Random planes, global linear convergence</h2><p>New preprint with Oleh Melnyk: <em>Stochastic Rayleigh-Ritz Ascent: Global Linear Convergence under a Spectral Gap</em>. We establish explicit spectral-gap-dependent global linear convergence rates in expectation for an adjoint-free random-plane algorithm for finding the top eigenvector. The analysis gives quantitative guarantees for the convergence observed in numerical experiments.</p><figure><a href=\"assets/rayleigh-ritz-figure3-column2.png\" aria-label=\"Open full-size Figure 3, second column\"><img loading=\"lazy\" decoding=\"async\" src=\"assets/rayleigh-ritz-figure3-column2.png\" width=\"520\" height=\"980\" style=\"display:block;width:100%;max-width:520px;max-height:none;height:auto;margin:0 auto\" alt=\"Figure 3, second column: mean spectral error and entrance-time survival for dimension 20 and spectral gap 0.1, with empirical curves and theoretical bounds.\"></a><figcaption>Figure 3, second column (d = 20, δ = 0.1): mean spectral error (top) and entrance-time survival (bottom). Curves are extracted unchanged; labels and selected legend entries are arranged for this crop. In the lower plot, the red line marks the 95% upper limit and the grey curves show entrance bounds. <a href=\"https://arxiv.org/abs/2610.42071v1\">Source preprint ↗</a></figcaption></figure><div class=\"links\"><a href=\"https://arxiv.org/abs/2610.42071v1\">Read preprint (v1) <span aria-hidden=\"true\">↗</span></a><a href=\"https://arxiv.org/abs/2610.42071\">Latest version <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": "2610.42071"
+  },
+  {
     "date": "2026-10-25",
     "kind": "Publication",
     "title": "Learning geometry without labels — now published",
