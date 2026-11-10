@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-11-10",
+    "kind": "Conference",
+    "title": "Randomized eigensolvers at the LMU–TUM–KU seminar",
+    "html": "<article class=\"news-item\" data-category=\"Conference\" data-date=\"2026-11-10\"><div class=\"meta\"><span class=\"tag\">Conference</span><span>10 November 2026 · Talk on 13 November</span></div><h2>Randomized eigensolvers at the LMU–TUM–KU seminar</h2><p>On Friday, 13 November 2026, I will give a presentation at the LMU–TUM–KU joint seminar, hosted at the Technical University of Munich (TUM). I will present our new preprint with Oleh Melnyk, <em>Stochastic Rayleigh-Ritz Ascent: Global Linear Convergence under a Spectral Gap</em>, which establishes explicit global linear convergence rates in expectation for an adjoint-free random-plane algorithm under a spectral gap.</p><figure><img loading=\"lazy\" decoding=\"async\" src=\"assets/lmu-tum-ku-seminar-2026-11-13.svg\" width=\"1200\" height=\"360\" style=\"display:block;width:100%;height:auto;max-height:none\" alt=\"LMU–TUM–KU joint seminar at TUM on Friday, 13 November 2026: Stochastic Rayleigh-Ritz Ascent, presented by Jonas Bresch.\"></figure><div class=\"links\"><a href=\"events.html#joint-seminar-2026-11-13\">Event details <span aria-hidden=\"true\">↗</span></a><a href=\"https://arxiv.org/abs/2610.42071v1\">Read preprint (v1) <span aria-hidden=\"true\">↗</span></a><a href=\"https://arxiv.org/pdf/2610.42071v1\">Preprint (PDF) <span aria-hidden=\"true\">↗</span></a></div></article>",
+    "paper": null
+  },
+  {
     "date": "2026-10-30",
     "kind": "Preprint",
     "title": "Random planes, global linear convergence",
